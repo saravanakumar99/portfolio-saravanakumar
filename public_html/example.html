@@ -1,0 +1,53 @@
+<head>
+    <!-- Other meta tags and CSS links -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+
+<body>
+    <header id="home" class="header">
+        <div class="overlay"></div>
+        <div class="header-content container">
+            <h1 class="header-title">
+                <span class="up">HI!</span>
+                <span class="down">I am <br> SaravanaKumar</span>
+            </h1>
+            <p class="header-subtitle" id="subtitle">FRONTEND WEB DESIGNER</p>  
+            <button class="btn btn-primary">Visit My Works</button>
+        </div>              
+    </header>
+
+    <script>
+        // Get the subtitle element
+        const subtitleElement = document.getElementById('subtitle');
+
+        // Array of subtitles
+        const subtitles = ['FRONTEND WEB DESIGNER', 'UI/UX EXPERT', 'RESPONSIVE DESIGNER'];
+
+        let currentSubtitleIndex = 0;
+
+        function updateSubtitle() {
+            // Clear the previous typed text
+            subtitleElement.textContent = '';
+
+            // Create a new instance of Typed
+            const typed = new Typed(subtitleElement, {
+                strings: [subtitles[currentSubtitleIndex]],
+                typeSpeed: 40, // Adjust the typing speed
+                backSpeed: 20,
+                smartBackspace: false,
+                loop: false,
+                cursorChar: '',
+                onComplete: () => {
+                    // Update the current subtitle index
+                    currentSubtitleIndex = (currentSubtitleIndex + 1) % subtitles.length;
+                }
+            });
+        }
+
+        // Update the subtitle every 5 seconds
+        setInterval(updateSubtitle, 5000);
+
+        // Initialize the typing animation
+        updateSubtitle();
+    </script>
+</body>
